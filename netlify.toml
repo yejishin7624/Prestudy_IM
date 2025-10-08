@@ -1,0 +1,39 @@
+# Netlify 배포 설정
+
+[build]
+  # 빌드할 폴더 (정적 파일들이 있는 위치)
+  publish = "."
+  
+  # 빌드 명령 (정적 사이트이므로 불필요)
+  command = ""
+
+# 리다이렉트 및 리라이트 규칙
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 헤더 설정 (보안 및 성능)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+# 환경 변수 설정 (필요시)
+# [build.environment]
+#   NODE_VERSION = "18"
+
+

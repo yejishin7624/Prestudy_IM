@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>근육주사 사전학습 시스템</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="status-bar"></div>
+        
+        <div class="header no-select">
+            <h1>💉 근육주사 사전학습 시스템</h1>
+            <p>실습 전 자기주도학습 및 평가</p>
+        </div>
+        
+        <div class="progress-section no-select">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="currentQ">0</div>
+                    <div>현재 문항</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="correctCount">0</div>
+                    <div>정답 수</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div>총 문항</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="message bot-message">
+                    <strong>💉 근육주사 사전학습 시스템에 오신 것을 환영합니다!</strong><br><br>
+                    실습 전 자기주도학습을 통해 근육주사의 핵심 개념과 절차를 익혀보세요.<br><br>
+                    <strong>🎯 학습 목표:</strong><br>
+                    • 근육주사 절차 완벽 숙지<br>
+                    • 핵심 체크포인트 이해<br>
+                    • 안전한 근육주사 수행 능력 향상<br><br>
+                    <strong>📝 평가 방식:</strong><br>
+                    • 총 10문항 (체크리스트 순서대로)<br>
+                    • 4지선다형 고난도 문제<br>
+                    • 즉시 피드백 제공<br>
+                    • 결과 자동 저장 (엑셀)<br><br>
+                    시작하려면 학번과 이름을 입력해주세요! 🚀
+                </div>
+                <div class="login-card">
+                    <div class="input-group">
+                        <label for="studentId">학번</label>
+                        <input type="text" id="studentId" placeholder="예: 20231234" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label for="studentName">이름</label>
+                        <input type="text" id="studentName" placeholder="예: 홍길동" autocomplete="off">
+                    </div>
+                    <button class="action-button" onclick="startLearning()">
+                        📖 학습 시작하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
